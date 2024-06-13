@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} My Cars{% endblock %}
+
+{% block body %}
+<h1>YAAHOOO: Hells bells, I've done it! - my first SYMFONY project</h1>
+
+<div>
+   {# Browse {{numberOfCars *10}} cars! #}
+   <span>
+      Browse {{ cars|length *10}} cars!
+
+      {# {% if numberOfCars>50 %} #}
+      {% if cars|length>3 %}
+      &emsp;(Thats a lot of cars 😍)
+      {% endif %}
+
+   </span>
+</div>
+
+<div>
+   <h2>My Car</h2>
+   <table>
+      <tr>
+         <th>Name</th>
+         <td>
+            <a href="{{ path('app_car_show', {id: myCar.id}) }}" target="_blank">
+               {{myCar.name|upper}}
+            </a>
+         </td>
+      </tr>
+      <tr>
+         <th>Class</th>
+         <td>{{myCar.class}}</td>
+      </tr>
+      <tr>
+         <th>Driver</th>
+         <td>{{myCar.driver|title}}</td>
+      </tr>
+      <tr>
+         <th>Status</th>
+         <td>{{myCar.status}}</td>
+      </tr>
+   </table>
+
+</div>
+{% endblock %}

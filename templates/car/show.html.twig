@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} {{ car.name }}{% endblock %}
+
+{% block body %}
+<h1>{{ car.name }}</h1>
+
+<div>
+   <table>
+      <tr>
+         <th>Class</th>
+         <td>{{car.class}}</td>
+      </tr>
+      <tr>
+         <th>Driver</th>
+         <td>{{car.driver|title}}</td>
+      </tr>
+      <tr>
+         <th>Status</th>
+         <td>{{car.status}}</td>
+      </tr>
+   </table>
+
+   {# <img src="https://picsum.photos/200" /> #}
+   <img src="{{ asset('images/car1.jpg') }}" width="50%" />
+
+</div>
+{% endblock %}
