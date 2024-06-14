@@ -9,7 +9,8 @@ class Car
       private string $name,
       private string $class,
       private string $driver,
-      private string $status,
+      private CarStatusEnum $status,
+      // private string $image,
    ) {
    }
    public function getId(): int
@@ -28,8 +29,25 @@ class Car
    {
       return $this->driver;
    }
-   public function getStatus(): string
+   public function getStatus(): CarStatusEnum
    {
       return $this->status;
+   }
+   public function getImage(): string
+   {
+      return 'images/car' . $this->id . '.jpg';
+   }
+   public function getStatusString(): string
+   {
+      return $this->status->value;
+   }
+   public function getStatusImageFilename(): string
+   {
+      return match ($this->status) {
+         CarStatusEnum::INACTIVE => 'images/status-inactive.jpg',
+         CarStatusEnum::LEAD => 'images/status-lead.jpg',
+         CarStatusEnum::NEW => 'images/status-new.jpg',
+         CarStatusEnum::REPAIR => 'images/status-repair.jpg',
+      };
    }
 }
