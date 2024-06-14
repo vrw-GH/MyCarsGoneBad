@@ -12,11 +12,12 @@ class CarController extends AbstractController
    #[Route('/cars/{id<\d+>}', name: 'app_car_show')]
    public function show(int $id, CarRepository $repository): Response
    {
+      $cars = $repository->findAll();
       $car = $repository->find($id);
       if (!$car) {
          throw $this->createNotFoundException('Car with this ID Not Found');
       }
 
-      return $this->render('car/show.html.twig', ['car' => $car]);
+      return $this->render('car/show.html.twig', ['cars' => $cars, 'car' => $car,]);
    }
 }

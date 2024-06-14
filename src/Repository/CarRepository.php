@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Model\Car;
+use App\Model\CarStatusEnum;
 use Psr\Log\LoggerInterface;
 
 class CarRepository
@@ -19,28 +20,31 @@ class CarRepository
             'BadBoy',
             'Extreme',
             'MrBad',
-            'leading',
+            CarStatusEnum::LEAD,
          ),
          new Car(
             2,
             'LittleFlower',
             'Soft',
             'Darling',
-            'attached to BadBoy',
+            CarStatusEnum::NEW,
+            // 'images/car2.jpg',
          ),
          new Car(
             3,
-            'Fighter',
             'Warrior',
             'Maximus',
-            'repaired',
+            'HitMan',
+            CarStatusEnum::REPAIR,
+            // 'images/car3.jpg',
          ),
          new Car(
             4,
             'GreenWheel',
             'Strong',
             'OakMan',
-            'Full Power',
+            CarStatusEnum::INACTIVE,
+            // 'images/car4.jpg',
          ),
       ];
    }
