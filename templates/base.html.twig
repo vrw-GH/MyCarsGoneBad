@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}My Cars Gone Bad{% endblock %}</title>
     <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%220.8em%22 font-size=%2296%22>🚘</text><text y=%221.7em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%230c0%22>vw</text></svg>">
     {% block stylesheets %}
     {% endblock %}
 
@@ -14,17 +14,19 @@
     {% endblock %}
 </head>
 
-<body class="text-white"
+<body class="text-white "
     style="background: radial-gradient(60.21% 90.21% at 50% 28.75%, #001C0B 42.62%, #01542D 100%);">
 
-    <div class="flex flex-col justify-between min-h-screen relative">
+    <div class="flex flex-col justify-between max-h-screen relative">
 
         <header
-            class="h-[130px] shrink-0 flex flex-col sm:flex-row items-center sm:justify-between py-4 sm:py-0 px-6 border-b border-white/20 shadow-md">
-            <a href="{{ path('app_homepage')}}">
-                <img class="h-[120px]" src="{{ asset('images/cars-logo.jpg') }}" alt="cars-logo">
-            </a>
-            <div>
+            class="max-h-fit shrink-0 flex flex-col sm:flex-row items-center sm:justify-between py-4 sm:py-0 px-1 border-b border-white/20 shadow-md">
+            <div class="p-5">
+                <a href="{{ path('app_homepage') }}">
+                    <img class="!h-28 !min-h-28 w-auto" src="{{ asset('images/cars-logo.jpg') }}" alt="cars-logo">
+                </a>
+            </div>
+            <div class="pl-5">
                 <h1 class="text-2xl">YAAHOOO: Hells bells, I've done it! - my first SYMFONY project</h1>
 
                 {# Browse {{numberOfCars *10}} cars! #}
@@ -39,7 +41,7 @@
                 </span>
             </div>
 
-            <nav class="flex space-x-4 font-semibold">
+            <nav class="flex space-x-4 font-semibold mr-2">
                 <a class="rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20" href="{{path('app_homepage')}}">
                     Home
                 </a>
@@ -53,7 +55,7 @@
 
     </div>
 
-    <footer class="p-5 bg-white/5 mt-3 text-center">
+    <footer class="p-5 bg-white/5 mt-3 text-center bottom-0">
         <a class="text-[#0086C4]" href="https://github.com/vrw-GH/MyCarsGoneBad" target="_blank">on GitHub</a>
     </footer>
 

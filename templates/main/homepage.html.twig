@@ -4,12 +4,12 @@
 
 {% block body %}
 
-<main class="flex flex-col lg:flex-row">
+<main class="flex flex-col lg:flex-row ">
 
    {{include('main/_carslistAside.html.twig')}}
 
-   <div class="px-12 pt-10 w-full">
-      <h1 class="text-2xl font-semibold mb-2">
+   <div class="px-12 pt-10 w-full  ">
+      <h1 class="text-2xl font-semibold mb-2 ">
          The <span class="text-4xl font-bold mb-8">
             &quot;{{ myCar.name|upper }}&quot;
          </span>
@@ -19,22 +19,20 @@
          </div> #}
       </h1>
 
-      <div class="space-y-5">
+      <div class="space-y-5 ">
          <!-- start car item -->
-         <a class="hover:text-slate-200" href="{{ path('app_car_show', {
-            id: myCar.id
-        }) }}">
+         <a class="hover:text-slate-200" href="{{ path('app_car_show', {id: myCar.id}) }}">
             <div
                class="bg-[#16202A] rounded-2xl pl-5 py-5 pr-11 flex flex-col min-[1174px]:flex-row min-[1174px]:justify-between">
                <div class="flex justify-center min-[1174px]:justify-start">
-                  <div class="ml-5">
+                  <div class="ml-5 h-fit">
                      {# <h4 class="text-[22px] pt-1 font-semibold">
                         <a class="hover:text-slate-200" href="{{ path('app_car_show', {
                         id: myCar.id
                     }) }}">{{myCar.name|upper}}</a>
                      </h4>
                      #}
-                     <img class="h-[4rem] w-[auto]" src="{{ asset(myCar.image) }}" alt="{{myCar.statusString}}">
+                     <img class=" h-[4rem] w-[auto]" src="{{ asset(myCar.image) }}" alt="{{myCar.statusString}}">
                   </div>
                </div>
                <div class="flex justify-center min-[1174px]:justify-start mt-2 min-[1174px]:mt-0 shrink-0">
@@ -64,9 +62,9 @@
    </div>
 
 </main>
-<p class="text-lg mt-5 text-center md:text-left">
-   Looking for your next ride?
-   <a href="#" class="underline font-semibold">Browse all {{ cars|length * 10 }} cars!</a>
+<p class="text-lg mt-5 text-center md:text-left pl-5">
+   Enjoy looking around my Garage!
+   {# <a href="#" class="underline font-semibold">Browse all {{ cars|length * 10 }} cars!</a> #}
 </p>
 
 {% endblock %}
