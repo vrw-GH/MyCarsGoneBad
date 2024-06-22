@@ -15,7 +15,7 @@ class MainController extends AbstractController
       $cars = $carRepository->findAll();
       // $carCount = count($cars);
       $myCar = $cars[array_rand($cars)];
-      return $this->render('main/homepage.html.twig', [
+      return $this->render('main/main.html.twig', [
          // 'numberOfCars' => $carCount,
          'myCar' => $myCar,
          'cars' => $cars,
