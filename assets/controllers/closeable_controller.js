@@ -2,7 +2,7 @@ import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
    async toggle() {
-      if (this.element.style.width !== 'auto') {
+      if (this.element.style.width !== 'auto' && this.element.style.width !== '') {
          this.element.style.width = 'auto';
          this.element.children[0].children[0].style.transform = 'rotate(0deg)';
       } else {

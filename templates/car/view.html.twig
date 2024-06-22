@@ -2,9 +2,20 @@
 
 {% block title %}{{ parent() }} - {{ car.name }}{% endblock %}
 
-{% block body %}
+{% block tagLine %}
+<span>
+   My garage has over {{ cars|length *10}} cars 😍
 
-<div class="my-4 px-8">
+   {# {% if numberOfCars>50 %} #}
+   {% if cars|length>3 %}
+   &emsp;(Thats a lot of cars !!)
+   {% endif %}
+</span>
+{% endblock %}
+
+{% block main %}
+
+<div class="my-4 px-8 text-end">
    <a class="bg-white hover:bg-gray-200 rounded-xl p-2 text-black" href="{{path('app_homepage')}}">
       <svg class="inline text-black" xmlns="http://www.w3.org/2000/svg" height="16" width="14"
          viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->

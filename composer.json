@@ -92,6 +92,7 @@
             "requirements-checker": "script"
         },
         "build-vw": {
+            "stop-server": "symfony local:server:stop",
             "cache:clear": "php bin/console cache:pool:clear --all",
             "assets-map:compile": "php bin/console asset-map:compile"
         },

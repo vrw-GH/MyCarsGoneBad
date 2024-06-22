@@ -11,6 +11,7 @@ class CarRepository
    public function __construct(private LoggerInterface $logger)
    {
    }
+
    public function findAll(): array
    {
       $this->logger->info('Car collection (REPOSITORY) retrieved');
@@ -48,6 +49,7 @@ class CarRepository
          ),
       ];
    }
+
    public function find(int $id): ?Car
    {
       foreach ($this->findAll() as $car) {
